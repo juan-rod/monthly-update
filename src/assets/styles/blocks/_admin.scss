@@ -1,0 +1,93 @@
+$card-path : polygon(86% 0, 100% 12%, 100% 100%, 0 100%, 0 0);
+.admin {
+  // border: 2px solid cc(ghost);
+  background-color: cc(bg);
+  height: 100%;
+  @include flexRow;
+  padding-top: 80px;
+  &-sidebar {
+    padding: 1em;
+    .card {
+      margin-bottom: 1em;
+    }
+  }
+  &-view {
+    height: 100%;
+    width: 100%;
+    padding: 2px;
+    @include flexColumnCenter;
+    clip-path: $card-path;
+    background-color: cc(ghost);
+    .admin {
+      &-add, &-edit, &-remove {
+        background-color: cc(bg);
+        width: 100%;
+        height: 100%;
+        clip-path: $card-path;
+      }
+      &-add {
+        @include flexColumnCenter;
+        padding: calc(1em - 2px);
+        &--form {
+          height: 100%;
+          // width: 100%;
+          width: 70%;
+          background: cc(ghost);
+          padding: 1em;
+          .form-group {
+            border: 4px solid cc(bg);
+            height: 60px;
+            @include flexRow;
+            margin-bottom: 1em;
+            label {
+              border-right: 4px solid cc(bg);
+            }
+            label, input {
+              flex: 1;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              padding-left: 1em;
+              font-size: 2em;
+              color: cc(bg);
+              text-transform: uppercase;
+            }
+            input {
+              flex: 2;
+            }
+            &.tags-container {
+              height: auto;
+              color: cc(bg);
+            }
+            &.button-group {
+              border: none;
+              label {
+                border: none;
+                flex: 1;
+              }
+              button {
+                border: 4px solid cc(bg);
+                flex: 2;
+                color: cc(bg);
+                text-transform: uppercase;
+                transition: all 350ms ease-in-out;
+                &:hover {
+                  background-color: cc(bg);
+                  color: cc(ghost);
+                  transform: translateY(-1px);
+                }
+              }
+            }
+          }
+        }
+      }
+      &-edit {
+        border: 1px solid red;
+      }
+      &-remove {
+        overflow: auto;
+        padding: 20px;
+      }
+    }
+  }
+}
