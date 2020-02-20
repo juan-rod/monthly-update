@@ -1,25 +1,39 @@
-@mixin flexColumnCenter {
+@mixin hw--100{
+  height: 100%;
+  width: 100%;
+}
+@mixin hw--auto{
+  height: auto;
+  width: auto;
+}
+// make a function for flexColumn/Row
+@mixin flexColumn {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
-
 @mixin flexRow {
   display: flex;
   flex-direction: row;
 }
+@mixin flexColumnCenter {
+  @include flexColumn;
+  justify-content: center;
+  align-items: center;
+}
+@mixin flexRowCenter {
+  @include flexRow;
+  justify-content: center;
+  align-items: center;
+}
 
 @mixin flexColumnStartEnd {
-  display: flex;
-  flex-direction: column;
+  @include flexColumn;
   justify-content: flex-start;
   align-items: flex-end;
 }
 
 @mixin flexRowSpaceBetween {
-  display: flex;
-  flex-direction: row;
+  @include flexRow;
   justify-content: space-between;
   align-items: center;
 }

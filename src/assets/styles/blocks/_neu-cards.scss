@@ -1,0 +1,96 @@
+.neu-container {
+  // border: 1px solid pink;
+  @include hw--100;
+  background-image: url('assets/neu-images/neumorphism-cards.png');
+  background-position: center;
+  background-size: cover;
+
+  .neu-card {
+    &-wrapper {
+      // border: 1px solid red;
+      @include hw--auto;
+      // @include flexColumnCenter;
+      // padding: 42px;
+      @include hw--100;
+      @include flexRow;
+      justify-content: space-evenly;
+      background-color: rgba(0, 0, 0, 0.68);
+    }
+    &-column {
+      @include flexColumn;
+      .neu-card-container {
+        border: 1px solid blue;
+        height: 500px;
+        width: 300px;
+        border-radius: 30px;
+      }
+    }
+    &-column:nth-of-type(1) {
+      .neu-card-container:nth-of-type(1) {
+        height: 130px;
+        margin-bottom: 4em;
+        border-radius: 0 0 30px 30px;
+        border-top: none;
+      }
+      .neu-card-container:nth-of-type(2) {
+        flex: 1;
+        border-radius: 30px 30px 0 0;
+        border-bottom: none;
+        @include flexColumn;
+        .inner-card {
+          border: 1px solid lime;
+          // flex: 1;
+          width: 100%;
+          height: 426px;
+          @include flexColumn;
+          justify-content: flex-end;
+          align-items: center;
+          &-card {
+            // border: 1px solid black;
+            height: 286px;
+            width: 184px;
+            margin-top: 4em;
+            border-radius: 18px;
+            background: #d7e1ed;
+          }
+          .buttons {
+            border: 1px solid lime;
+            flex: 1;
+            width: 100%;
+            @include flexRow;
+            justify-content: center;
+            align-items: center;
+            li {
+              border: 1px solid black;
+              height: 12px;
+              width: 12px;
+              border-radius: 50%;
+              margin: 0 4px;
+            }
+          }
+        }
+          .balance-container {
+            border: 1px solid lime;
+            flex: 1;
+            width: 100%;
+          }
+          .slider {
+            border: 1px solid lime;
+            flex: 1;
+            width: 100%;
+          }
+          .credit-container {
+            border: 1px solid lime;
+            flex: 1;
+            width: 100%;
+          }
+      }
+    }
+    &-column:nth-of-type(2) {
+      justify-content: center;
+      .neu-card-container {
+        height: 652px;
+      }
+    }
+  }
+}
